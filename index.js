@@ -9,12 +9,11 @@ connectToDatabase();
 http.use(cors()),
 http.use(express.json()),
 http.use(bodyparser.json()),
-http.set("view engine","ejs");
 
 http.use('/Mentor',require("./controllers/Mentorcontroller"));
 http.use('/Student',require("./controllers/Studentcontroller"));
 
 
 http.listen (PORT,()=>{
-    console.log("starting...");
+    console.log("starting...9000");
 });

@@ -3,7 +3,7 @@ const {default:mongoose}=require("mongoose");
 const MentorsSchema=mongoose.Schema({
     Coordinetor:{
         type:String,
-        require:true,
+     
     },
     MentorName:{
         type:String,

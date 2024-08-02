@@ -1,4 +1,3 @@
-
 const Mentormodel=require("../Models/Mentormodels");
 
 function GET(req,res,next){
@@ -31,8 +30,9 @@ function GET(req,res,next){
         });
     });
 }
+
 function PUT(req,res,next){
-Mentormodel.find()
+Mentormodel.find(id)
 .then ((response)=>{
     const id=Number(req.params.id)
     if (response.length<1){
@@ -58,16 +58,23 @@ Mentormodel.find()
 
 
 
-
-
 async function CREATE(req,res,next){
 const newMentordata= await Mentormodel.create(req.body);
-console.log(newMentordata);
-
+newMentordata
+.save()
+.then((response)=>(response))
     return res.status(200).json({
         message:'successful creating datas'
-    });
+    })
+    .catch((error)=>{
+        res.status(500).json({
+            success:false,
+            message:"something went wrong",
+            error:error,
+        });
+      });
 }
+
 module.exports={
     GET,
     PUT,

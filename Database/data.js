@@ -4,7 +4,7 @@ function connectToDatabase() {
   
   mongoose
     .connect("mongodb://localhost:27017/Mentor")
-    .then((response) => console.log("Database connection successful"))
+    .then(response => console.log("Database connection successful"))
     .catch((e) => console.log(e));
 }
 
